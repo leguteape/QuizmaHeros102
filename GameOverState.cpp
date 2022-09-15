@@ -6,6 +6,7 @@
 #include "MainMenuState.hpp"
 #include "GameState.hpp"
 #include "Games.hpp"
+#include "Categories.hpp"
 
 #include <iostream>
 
@@ -18,25 +19,30 @@ namespace Quizma
 
 	void GameOverState::Init()
 	{
+		_name_file.open(PLAYER_RECORD_FILEPATH, std::ios::app);
+		
+
 		this->_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		this->_data->assets.LoadTexture("Game Over", GAME_OVER_IMAGE);
 		this->_data->assets.LoadTexture("Quit Image", QUIT_FILEPATH);
 		this->_data->assets.LoadTexture("Cursor", CURSOR_FILEPATH);
-
+		this->_data->assets.LoadTexture("Play Again", PLAY_AGAIN_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Return To Title", RETURN_TO_TITLE_FILEPATH);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));
-		_gameOver.setPosition((SCREEN_WIDTH / 2) - (_gameOver.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_gameOver.getGlobalBounds().height / 2));
-
-		_nextPage.setTexture(this->_data->assets.GetTexture("Next Page Image"));
+		_playAgain.setTexture(this->_data->assets.GetTexture("Play Again"));
 		_gameOver.setTexture(this->_data->assets.GetTexture("Game Over"));
-		_Quit.setTexture(this->_data->assets.GetTexture("Quit Image"));
+		_quit.setTexture(this->_data->assets.GetTexture("Quit Image"));
+		_returnToTitle.setTexture(this->_data->assets.GetTexture("Return To Title"));
 		_cursor.setTexture(this->_data->assets.GetTexture("Cursor"));
 
-		_cursor.setPosition((SCREEN_WIDTH / 2) - (_cursor.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_cursor.getGlobalBounds().height / 2));
 		_cursor.setScale(0.35, 0.35);
-
-		_nextPage.setPosition(1500, 950);
-		_Quit.setPosition(1700, 950);
+	
+		_gameOver.setPosition((SCREEN_WIDTH / 2) - (_gameOver.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_gameOver.getGlobalBounds().height / 2));
+		_cursor.setPosition((SCREEN_WIDTH / 2) - (_cursor.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_cursor.getGlobalBounds().height / 2));
+		_playAgain.setPosition(800, 950);
+		_returnToTitle.setPosition(1200, 950);
+		_quit.setPosition(1700, 950);
 
 	}
 
@@ -51,25 +57,49 @@ namespace Quizma
 				this->_data->window.close();
 			}
 
-			// For moving to the main menu
-			if (this->_data->input.IsSpriteClicked(this->_nextPage, sf::Mouse::Left, this->_data->window))
+			// For moving to the categories selection(for the same player)
+			if (this->_data->input.IsSpriteClicked(this->_playAgain, sf::Mouse::Left, this->_data->window))
 			{
 				// Go to the next page/question
+
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
-				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+				this->_data->machine.AddState(StateRef(new Categories(_data)), true);
 			}
-
-			//for exiting 
-			if (this->_data->input.IsSpriteClicked(this->_Quit, sf::Mouse::Left, this->_data->window))
+			if ((this->_data->input.IsSpriteClicked(this->_returnToTitle, sf::Mouse::Left, this->_data->window)) || (this->_data->input.IsSpriteClicked(this->_quit, sf::Mouse::Left, this->_data->window)) )
 			{
-				this->_data->sound.setBuffer(this->_data->buffer);
-				this->_data->sound.play();
-				//show the game over state!
-				//this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
-				_data->window.close();
-			}
+				if (this->_data->score < 10)
+					_name_file << this->_data->score << "      ";
+				else if (this->_data->score < 100)
+					_name_file << this->_data->score << "     ";
+				else if (this->_data->score < 1000)
+					_name_file << this->_data->score << "    ";
+				if (this->_data->category == 0)
+					_name_file << "Category - 1" << "       ";
+				else if (this->_data->category == 1)
+					_name_file << "Category - 2" << "       ";
+				else if (this->_data->category == 3)
+					_name_file << "Category - 3" << "       ";
+				_name_file << this->_data->name << " " << std::endl;
 
+
+				//for returning to the main screen title
+				if (this->_data->input.IsSpriteClicked(this->_returnToTitle, sf::Mouse::Left, this->_data->window))
+				{
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+				}
+
+				//for exiting 
+				if (this->_data->input.IsSpriteClicked(this->_quit, sf::Mouse::Left, this->_data->window))
+				{
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					_data->window.close();
+				}
+			}
+		
 			_cursor.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(this->_data->window)));
 
 		}
@@ -77,11 +107,7 @@ namespace Quizma
 
 	void GameOverState::Update(float dt)
 	{
-		//if (this->_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
-		//{
-		//	// Close the application
-		//	this->_data->window.close();
-		//}
+		
 	}
 
 	void GameOverState::Draw(float dt)
@@ -89,8 +115,9 @@ namespace Quizma
 		this->_data->window.clear(sf::Color::Black);
 		this->_data->window.draw(this->_background);
 		this->_data->window.draw(this->_gameOver);
-		this->_data->window.draw(this->_nextPage);
-		this->_data->window.draw(this->_Quit);
+		this->_data->window.draw(this->_playAgain);
+		this->_data->window.draw(this->_quit);
+		this->_data->window.draw(this->_returnToTitle);
 		this->_data->window.draw(this->_cursor);
 		this->_data->window.display();
 	}

@@ -1,11 +1,80 @@
-Calculus has always been a predominating chapter in maths. If you think that you have ample knowledge on this subject matter & if you are given y=sqrt(tanx+sqrt(tanx+sqrt(tanx+sqrt(tanx...))) then find y'.:secx/(2y-1):sec^2x/(2y-1):secx/(1-2y):sec^2x/(1-2y):sec^2x/(2y-1)
-Idiomatic expressions are a type of informal english that have a meaning different from the meaning of words.So what does this mean "I will clean my room when pigs fly.":always:sometimes:sporadically:never:never
-How many rectangles can be formed from a figure having 5 parallel horizontal lines and 5 parallel vertical lines?:100:16:50:24:100
-When a man standing between two parallel hills fires a gun and hears the first echo and second echo after time 2s and 4s  then the distance between the hills is:1050m:990m:875m:1300m:990m
-An artist has a bird shaped gallery.To ensure the museum is fully guarded,he places 4 guards at the corners with red dots so that every inner wall is visible by at least one guard.Can he fully guard the museum with fewer guards?:yes,with only two guards:yes,with only three guards:No,we need at least 4 guards:No,enough information:yes,with only two guards
-Two identical rows of 1000 dominoes are initiated in two different ways,In row A the first domino is barely tipped over, and hits the second domino in 1s.In row B the first domino is pushed so that it hits the second domino in 0.33s.How long will the two rows take to finish falling?:row B finishes falling in about one third the time of row A:row B finishes falling in about two third the time of row A:row A and row B takes about the same time to finish falling:row A finishes falling faster than row B:row A and row B takes about the same time to finish falling
-Ram,Shyam and Hari are 3 brothers.If the following statements are true, which one is the youngest?Ram is the oldest,Shyam is not the oldest,Hari is not the youngest.:Ram:Shyam:Hari:Both Shyam and Hari:Shyam
-We often see people performing on the stage,if there are 7 girls dancing in circular form.In how many ways can they stand in a circle:440:350:360:560:360
-There are various ores of iron from which it can be extracted.One of them is haematite.What is molecular formula of this ore?:Fe3o4:Fe3o3:Fe2o3:Fe4o3:Fe2o3
-CDs,DVDs are often used to distribute games.What if DVD-ROM disks are used to distribute video game software?:Disk cost increases:Can be reused after finishing game:Prevents cheating & makes game hard:Cannot hold games & videos:Prevents cheating & makes game hard
-A rugby ball is kicked such that it spins throughtout its entire flight, and reaches a maximum height.Is it possible for the ball to bounce higher than maximum height?:Yes:No:Maybe:Not enough information:Yes
+Math:If you are given y=sqrt(tanx+sqrt(tanx+sqrt(tanx+sqrt(tanx...))) then find y'.:secx/(2y-1):sec^2x/(2y-1):secx/(1-2y):sec^2x/(1-2y):sec^2x/(2y-1)
+Math:What does this mean "I will clean my room when pigs fly.":always:sometimes:sporadically:never:never
+Math:How many rectangles can be formed from a figure having 5 parallel horizontal lines and vertical lines?:100:16:50:24:100
+Math:A man standing between two parallel hills fires a gun and hears the first echo and second echo after time 2s and 4s then the distance between the hills is:1050m:990m:875m:1300m:990m
+Math:An artist has a bird shaped gallery.To ensure the museum is fully guarded,he places 4 guards at the corners with red dots so that every inner wall is visible by at least one guard.Can he fully guard the museum with fewer guards?:yes,with only two guards:yes,with only three guards:No,we need at least 4 guards:No,enough information:yes,with only two guards
+Math:Ram,Shyam and Hari are 3 brothers.If the following statements are true, which one is the youngest?Ram is the oldest,Shyam is not the oldest,Hari is not the youngest.:Ram:Shyam:Hari:Both Shyam and Hari:Shyam
+Math:We often see people performing on the stage,if there are 7 girls dancing in circular form.In how many ways can they stand in a circle:440:350:360:560:360
+Math:There are various ores of iron from which it can be extracted.One of them is haematite.What is molecular formula of this ore?:Fe3o4:Fe3o3:Fe2o3:Fe4o3:Fe2o3
+Math:CDs,DVDs are often used to distribute games.What if DVD-ROM disks are used to distribute video game software?:Disk cost increases:Can be reused after finishing game:Prevents cheating & makes game hard:Cannot hold games & videos:Prevents cheating & makes game hard
+Math:A rugby ball is kicked such that it spins throughtout its entire flight, and reaches a maximum height.Is it possible for the ball to bounce higher than maximum height?:Yes:No:Maybe:Not enough information:Yes
+Math:The process of heating ore in absence of air in the process of metallurgy is:Calcination:Roasting:Smelting:Quenching:Calcination
+Math:The type of the wave formed in an open organ pipe from both ends is:Transverse Stationary:Longitudinal Stationary:Both:None:Longitudinal Stationary
+Math:A fan is switched on in a room.The temperature of the room:Increases:Decreases:Remains Same:Cannot be predicted:Increases
+Math:The instrument that measures and records the relative humidity of the air is:Hygrometer:Hydrometer:Lactometer:Barometer:Hygrometer
+Math:If the length of a simple pendulum is halved then its period of oscillation is:Doubled:halved:Increased by a factor:Decreased by a factor:Decreased by a factor
+Math:The distance between two parallel planes given by 3x-y+2z-6=0 and 6x-2y+4z+4=0 is:3:5:2.14:1.25:2.14
+Math:0.5g of pure sodium carbonate is completely dissolved in 100ml of decinormal hydrochloric acid, the resulting mixture is:neutral:acidic:basic:amphoteric:acidic
+Math:If we consider there are three axis, then the z coordinate of any point in the xy planes is:1:-1:2:0:0
+Math:Copper can be extracted from its ore,which of the following is the ore of copper:malachite:haematite:carnalite:cinnabar:malachite
+Math:The first moon landing marked the beginning of an exciting .........in space exploration:age:event:era:step:step
+Math:There are many junction diode, among them P-N junction diode is equivalent to:Resistor:Capacitor:Inductor:Voltage source:Capacitor
+Math:A proton and an alpha-particle of equal momenta enter a uniform magnetic field normally. The radii of their orbits will have the ratio:1/1:2/1:1/2:4/1:2/1
+Math:Roots are the values obtained by solving a equation, the equation whose roots are twice the roots of the equation 7x^2-5x+3=0 is:2x^2-5x+4=0:3x^2+4x-7=0:7x^2-8x+12=0:12x^2-7x+5=0:7x^2-8x+12=0
+Math:If the flow of water is such that water in a tank is doubled in every minute and if the tank is filled in an hour.At what time is it half filled?:32.5:30:59:52:59
+Math:The impedence of series RLC circuit at resonance is:Maximum:Minimum:Zero:None:Maximum
+Math:The direction of magnetic field within a magnet is:South to north:Back to front:Front to back:North to south:South to north
+Math:The area of triangle formed by the line 3x+4y=12 with coordinate axes is:2:4:6:12:6
+Math:Shortest distance of the point(4,3,5) from z-axis is:5 units:Sqrt(34) units:Sqrt(41) units:Sqrt(50) units:5 units
+Math:Size of the nucleus is in the order of:10^-6 m:10^-10 m:10^-12 m:10^-15 m:10^-15 m
+Math:Rutherford's aplha-experiment determines the size of:atom:electron:nucleus:all:nucleus
+Sports:Where did Usain Bolt finish in his final race of his career?:First:Second:Third:He didn't finish:He didn't finish
+Sports:Which tennis player made it to three singles grand slam finals this year?:Venus Williams:Roger Federer:Rafa Nadal:Garbiñe Muguruza:Rafa Nadal
+Sports:Who scored the first goal of the fifa world cup 2018?:Denis Cheryshev:Aleksandr Golovin:Yuri Gazinsky:Christiano Ronaldo:Yuri Gazinsky
+Sports:Who was the first player to be sent off in the World Cup 2018?:Carlos Sanchez:Igor Smolnikov:Cheikhou Kouyate:Neymar:Carlos Sanchez
+Sports:Who assisted Lionel Messi for his only goal of the group stages?:Angel Di Maria:Ever Banega:Enzo Perez:None of the above:Ever Banega
+Sports:Which athlete held three different world records in the same event on the same day in july?:Mo Farah:Usain Bolt:Adam Peaty:Jonnie Peacock:Adam Peaty
+Sports:Where can you find arnis being widely practised?:Japan:Srilanka:Philippines:China:Philippines
+Sports:In what sport would one find an Albion round?:Wrestling:Javelin throw:Archery:Tennis:Archery
+Sports:In polo, what is a period of play called?:Lap:Chukka:Round:Half:Chukka
+Sports:Who was the first player to win five straight Wimbledon tennis titles?:Venus Williams:Roger Federer:Rafa Nadal:Bjorn Borg:Bjorn Borg
+Sports:How many holes does a standard golf course have?:20:9:18:14:18
+Sports:When was the first world cup played?:1930:1932:1934:1936:1930
+Sports:Who is the youngest golfer ever to win the U.S. Junior Amateur title?:Tiger Woods:Tiger Woods
+Sports:How many holes are there in a bowling ball?:3:4:2:5:3
+Sports:In which country was golf invented?:England:Switzerland:Scotland:Netherland:Scotland
+Sports:Which country hosted the 2006 FIFA World Cup?:Brazil:Russia:South Africa:Germany:Germany
+Sports:What is the maximum number of clubs that can be used in golf tournament?:14:12:16:20:14
+Sports:What was the first sport to have a world championship?:Football:Cricket:Billiards:Chess:Billiards
+Sports:In what year was the first World Cup of cricket held?:1964:1972:1975:1978:1975
+Sports:In which city was the Asian Games first held?:Beijing:Delhi:Tokyo:Kathmandu:Delhi
+English:He could go for a long drive today if it.......sunny.:was:is:were:had been:were
+English:I was told......very quickly and quietly.:go:to go:going:to going:to go
+English:He postponed..........to lumbini.:going:to going:gone:to go:going 
+English:The offer was too good for me to turn it........:off:down:away:over:down 
+English:I, accompanied by my friends,.......going to the party.:am:is:are:have:am
+English:The synonym of 'alienate' is:estrange:calm:reconcile:depreciate:estrange
+English:The antonym of 'carnal' is:stormy:miscrable:hasty:spiritual:spiritual
+English:The opposite meaning of the word 'fiasco' is:failure:debacle:limp:achievement:achievement
+English:A man of unsual habits is:genius:bigot:fanatic:eccentric:eccentric
+English:The servant always complies........the wishes of his master:to:with:for:in:with
+English:'To break the ice' refers to:to end the hostility:to end up partnership:to start quarelling:to start a conversation:to start a conversation
+English:She..............the work by tomorrow.:will finish:is finishing:finished:will have finished:will have finished
+English:Listen! I..........to explain this to you.:try:tried:have tried:am trying:am trying
+English:'A hard nut to crack' means:very stubborn:difficult child:walnut or fruit:problem hard to solve:difficult child
+English:'Continuous' is for 'continuity'...............for 'creation'.:create:creative:creatively:none:creative
+English:She talks as if she...........everything,but she doesn't.:know:knew:had known:had been knowing:knew
+English:We are looking forward to..........our parents next month.:see:saw:been seen:seeing:seeing
+English:The disease has.............throughout the city.:broken out:broken down:broken up:broken off:broken out
+English:He decided to 'put his foot down' means:not to yield:resign:withdraw:none:not to yield
+English:She...........the table for dinner.:lies:lay:lain:lying:lay
+English:There was a discussion between.........:me and her:them and us:you and her:me and them:you and her
+English:Those of.........who were chosen were asked to fill in.......nomination forms:we,our:us,ours:them,theirs:you,your:you,your
+English:The professor and lawyer.........responsible for the plan.:is:are:have been:were:is
+English:He was cautioned...........driving fast.:against:by:at:for:against
+English:The tendancy of postponing things:procrastinate:prolong:anticipate:delay:procrastinate
+English:The meeting was..........till next friday.:put by:put off:put in:pull through:put off
+English:'To cast the first stone' means:deeply involved:first to find fault:praise all:start a fight
+English:The man.........from his chair suddenly.:raised:rose:rise:raise:rose
+English:She did make-up and it........her face:shone:shined:shine:none:shone
+English:The collection of flags is:orology:bunting:numismatics:philatelist:bunting
