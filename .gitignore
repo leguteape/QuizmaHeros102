@@ -1,0 +1,6 @@
+bin/
+obj/
+*.dll
+Quizma Heroes.cbp
+Quizma Heroes.depend
+Quizma Heroes.layout

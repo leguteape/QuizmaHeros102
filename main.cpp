@@ -1,10 +1,24 @@
-#include "Games.hpp"
-#include "DEFINITIONS.hpp"
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-	Quizma::Games(SCREEN_WIDTH, SCREEN_HEIGHT, "QUIZMA HEROES");
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
-	return EXIT_SUCCESS;
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
+
+    return 0;
 }
-
