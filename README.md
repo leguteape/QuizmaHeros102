@@ -12,7 +12,7 @@ The official repo for our semester project which is supposed to be a quiz game w
 ##  B) Adding files to the project directory
 
 * 1. After you create a project from SFML template after watching that video from Hopson Channel <br/>
-* 2. Download the Repository.zip Or Git Clone the repository by: git clone https://github.com/acharyabibash/Quizma.git <br/>
+* 2. Download the Repository.zip Or Git Clone the repository by: git clone https://github.com/2goodAP/QuizmaHeros102.git <br/>
 * 3. Then copy files from the Downloaded Zipped or Cloned Repository to your project <br/>
 * 4. Below your project workspace folder there is a folder with the name of your project <br/>
 * 5. Click on Add files and then add all files in your project folder <br/>
