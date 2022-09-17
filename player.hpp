@@ -21,10 +21,10 @@ namespace Quizma
 		GameDataRef _data;
 		sf::Sprite _background;
 		sf::Sprite _border;
-		std::ofstream _name_file;
+		sf::Text _name_text;
+		sf::Font _name_font;
 		std::string _name;
-		std::vector<std::string> _name_vector;
-		sf::Text _display_name;
+	
 	};
 }
 

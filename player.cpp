@@ -4,13 +4,14 @@
 #include "Games.hpp"
 #include "GameState.hpp"
 #include <SFML/Window.hpp>
+#include "Categories.hpp"
 
 #include <iostream>
 #include<string>
 
 namespace Quizma
 {
-	void armVector(sf::Event);
+	
 
 	player::player(GameDataRef data) : _data(data)
 	{
@@ -23,16 +24,20 @@ namespace Quizma
 		_background.setTexture(this->_data->assets.GetTexture("Player Background"));
 		std::cout << "The state has been loaded.\n";
 
-		_display_name.setCharacterSize(50);
-		_display_name.setFillColor(sf::Color::White);
-		_display_name.setPosition(600, 400);
+		_name_font.loadFromFile(PLAYER_FONT_FILEPATH);
+		_name_text.setFont(_name_font);
+		_name_text.setCharacterSize(50);
+		_name_text.setFillColor(sf::Color::Black);
+		_name_text.setPosition(1005, 665);
+		_name_text.setOrigin(_name_text.getLocalBounds().width / 2, _name_text.getLocalBounds().height / 2);
+		_name_text.scale(1.0f , 1.0f);
 
 	}
 
 	void player::HandleInput()
 	{
 		sf::Event event;
-
+		
 		while (/*_name_file.is_open() && */this->_data->window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed) 
@@ -43,28 +48,27 @@ namespace Quizma
 			{
 				if (event.key.code == sf::Keyboard::Return)
 				{
+					this->_data->name = _name;
 					this->_data->sound.setBuffer(this->_data->buffer);
 					this->_data->sound.play();
-					this->_name_file.close();
 					std::cout << "Load new state" << std::endl;
-					this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+					this->_data->machine.AddState(StateRef(new Categories(_data)), true);
 				}
 				else if (event.type == sf::Event::TextEntered)
 				{
 					if (event.text.unicode >= 33 && event.text.unicode <= 126) 
 					{
 						_name += (char)event.text.unicode;
-						_name_file << _name << std::endl;
-						_display_name.setString(_name);
 					}
 					else if (event.text.unicode == 8) 
 					{
-						system("cls");
-						_name = _name.substr(0, _name.size() - 1);
-						_display_name.setString(_name);
+						_name = _name.substr(0, _name.length() - 1);
+					
 					}
-					std::cout << _name << std::endl;
+					_name_text.setString(_name);
+					_name_text.setOrigin(_name_text.getLocalBounds().width / 2, _name_text.getLocalBounds().height / 2);
 				}
+				
 			}
 		}
 	}
@@ -77,25 +81,13 @@ namespace Quizma
 	void player::Draw(float dt)
 	{
 		this->_data->window.clear();
-		this->_data->window.draw(this->_data->text);
+		
 		this->_data->window.clear(sf::Color::Black);
 		this->_data->window.draw(this->_background);
 		this->_data->window.draw(this->_border);
-		this->_data->window.draw(this->_display_name);
+		this->_data->window.draw(_name_text);
 		this->_data->window.display();
 	}
 
-	void armVector(sf::Event event)
-	{
-		std::ofstream name_file(PLAYER_RECORD_FILEPATH, std::ios::app);
 
-		//if (name_file.is_open()) 
-		//{
-		//	if (event.type == sf::Event::TextEntered)
-		//	{
-		//		a
-		//	}
-		//}
-
-	}
 }
