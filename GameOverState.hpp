@@ -20,13 +20,12 @@ namespace Quizma
 
 	private:
 		GameDataRef _data;
-		std::ofstream _name_file;
+
 		sf::Clock _clock;
 		sf::Sprite _background;
 		sf::Sprite _gameOver;
 		sf::Sprite _cursor;
-		sf::Sprite _quit;
-		sf::Sprite _playAgain;
-		sf::Sprite _returnToTitle;
+		sf::Sprite _Quit;
+		sf::Sprite _nextPage;
 	};
 }

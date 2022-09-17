@@ -24,11 +24,6 @@ namespace Quizma
 		InputManager input;
 		QuestionManager questions;
 
-		int score;
-		int category;
-		std::string categoryStr;
-		std::string highscoreCat;
-		std::string name;
 
 		sf::Music music;
 		sf::Music music1;
@@ -42,6 +37,12 @@ namespace Quizma
 
 		std::vector<QuestionManager> question_vector;
 		QuestionVector qa_vector;
+
+		/*std::ifstream questionFile;
+		std::vector<std::string> question;
+		std::ifstream answerFile;
+		std::vector<std::string> answers;*/
+
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;

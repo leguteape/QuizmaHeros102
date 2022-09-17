@@ -27,3 +27,5 @@ The official repo for our semester project which is supposed to be a quiz game w
 * 1. Go to main.cpp<br/>
 * 2. Build it <br/>
 * 3. Then run it <br/>
+
+Good luck

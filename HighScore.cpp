@@ -9,7 +9,6 @@
 
 namespace Quizma
 {
-	
 	HighScore::HighScore(GameDataRef data) : _data(data)
 	{
 
@@ -17,47 +16,22 @@ namespace Quizma
 
 	void HighScore::Init()
 	{
-		this->_data->window.setMouseCursorVisible(false);
+		this->_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
+		this->_data->assets.LoadTexture("Play Again", PLAY_AGAIN_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Quit Image", QUIT_FILEPATH);
 
-		_name_file.open(PLAYER_RECORD_FILEPATH);
-		_font.loadFromFile(PLAYER_FONT_FILEPATH);
-		_text.setFont(_font);
-		_text.setCharacterSize(50);
-		_text.setFillColor(sf::Color::Black);
+		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));
+		_playAgain.setTexture(this->_data->assets.GetTexture("Play Again"));
+		_Quit.setTexture(this->_data->assets.GetTexture("Quit Image"));
+	
+		_playAgain.setPosition(1300, 950);
+		_Quit.setPosition(1700, 950);
 
-		this->_data->assets.LoadTexture("High Score Background", HIGH_SCORE_FILEPATH);
-		this->_data->assets.LoadTexture("Back", BACK_BUTTON_FILEPATH);
-		this->_data->assets.LoadTexture("Cursor", CURSOR_FILEPATH);
 
-		_background.setTexture(this->_data->assets.GetTexture("High Score Background"));
-		_backButton.setTexture(this->_data->assets.GetTexture("Back"));
-		_cursor.setTexture(this->_data->assets.GetTexture("Cursor"));
-		_cursor.setScale(0.35, 0.35);
-
-		_cursor.setPosition((SCREEN_WIDTH / 2) - (_cursor.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_cursor.getGlobalBounds().height / 2));
-		_backButton.setPosition(1300, 950);
-
-		positionText.x = 650;
-		positionText.y = 450;
-		if (_name_file.is_open())
-		{
-			result_no = 0;
-			std::string line;
-			while (std::getline(_name_file, line)) {
-				std::cout << this->_data->highscoreCat[11] << line[18];
-				if ((line[18]) == this->_data->highscoreCat[11]) {
-					result.push_back(line);
-					result_no++;
-				}
-			}
-			_name_file.close();
-		}
-		std::sort(result.begin(), result.end());
-		for (std::vector<std::string>::iterator it = result.begin(); it != result.end(); ++it) {
-			std::cout << ' ' << *it;
-			std::cout << '\n';
-		}
-		
+		_optionsBox1.setColor(sf::Color::Black);
+		_optionsBox2.setColor(sf::Color::Black);
+		_optionsBox3.setColor(sf::Color::Black);
+		_optionsBox4.setColor(sf::Color::Black);
 	}
 
 	void HighScore::HandleInput()
@@ -70,24 +44,23 @@ namespace Quizma
 			{
 				this->_data->window.close();
 			}
-
-			if (sf::Event::KeyPressed)
-			{
-				if (event.key.code == sf::Keyboard::Escape)
-				{
-					this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
-				}
-			}
 			
-			if (this->_data->input.IsSpriteClicked(this->_backButton, sf::Mouse::Left, this->_data->window))
+			if (this->_data->input.IsSpriteClicked(this->_playAgain, sf::Mouse::Left, this->_data->window))
+			{
+
+				this->_data->sound.setBuffer(this->_data->buffer);
+				this->_data->sound.play();
+				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+			}
+
+			if (this->_data->input.IsSpriteClicked(this->_Quit, sf::Mouse::Left, this->_data->window))
 			{
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
-				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);				
-			}	
-			_cursor.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(this->_data->window)));
+				this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+			}
 
-
+		
 		}
 	}
 
@@ -98,24 +71,11 @@ namespace Quizma
 
 	void HighScore::Draw(float dt)
 	{
-		
-
 		this->_data->window.clear(sf::Color::Black);
+
 		this->_data->window.draw(this->_background);
-		this->_data->window.draw(this->_backButton);
-		positionText.y = 450;
-
-		for (int i = 0; i < result_no; i++) 
-		{
-			_text.setPosition(positionText.x,positionText.y);
-			_text.setString(result[i]);
-			this->_data->window.draw(_text);
-			positionText.y += 55;
-		}
-
-		
-		
-		this->_data->window.draw(this->_cursor);
+		this->_data->window.draw(this->_playAgain);
+		this->_data->window.draw(this->_Quit);
 
 		this->_data->window.display();
 	}
